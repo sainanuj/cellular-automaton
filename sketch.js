@@ -106,3 +106,10 @@ document.addEventListener("touchstart", (e) => {
     let y = Math.floor((e.touches[0].clientY)/resolution);
     makeAlive(grid, x, y);
 });
+
+document.addEventListener("touchmove", (e) => {
+    let touches = e.changedTouches;
+    let x = Math.floor((touches[0].clientX)/resolution);
+    let y = Math.floor((touches[0].clientY)/resolution);
+    makeAlive(grid, x, y);
+});
