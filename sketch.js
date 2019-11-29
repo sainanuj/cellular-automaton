@@ -8,7 +8,7 @@ canvas.style.backgroundColor = "pink";
 window.onresize = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+    setup();
 }
 
 function make2Darray(rows, cols) {
