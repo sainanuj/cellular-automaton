@@ -102,7 +102,7 @@ function makeAlive(grid, x, y) {
 }
 
 document.addEventListener("touchstart", (e) => {
-    let x = Math.floor(e.touches[0].clientX);
-    let y = Math.floor(e.touches[0].clientY);
+    let x = Math.floor((e.touches[0].clientX)/resolution);
+    let y = Math.floor((e.touches[0].clientY)/resolution);
     makeAlive(grid, x, y);
 });
