@@ -149,7 +149,7 @@ function doubleTap() {
     let now = new Date().getTime();
     if (!(!latestTap)) {
         deltaTime = now - latestTap;
-        if ((deltaTime < 600) && (deltaTime > 0)) {
+        if ((deltaTime < 700) && (deltaTime > 0)) {
             toggleFullscreen();
         }
     }
