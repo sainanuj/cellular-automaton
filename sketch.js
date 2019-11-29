@@ -92,3 +92,17 @@ function countNeighbours(grid, x, y) {
 
 setup();
 draw();
+
+function makeAlive(grid, x, y) {
+    for (let i=-1; i<2; i++) {
+        for (let j=-1; j<2; j++) {
+            grid[(x+i+rows)%rows][(y+j+cols)%cols] = 1;
+        }
+    }
+}
+
+document.addEventListener("touchstart", (e) => {
+    let x = Math.floor(e.touches[0].clientX);
+    let y = Math.floor(e.touches[0].clientY);
+    makeAlive(grid, x, y);
+});
