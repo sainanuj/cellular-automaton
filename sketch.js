@@ -3,7 +3,7 @@ let ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-canvas.style.backgroundColor = "#F7A998";
+canvas.style.backgroundColor = "white";
 
 window.onresize = () => {
     resize();
