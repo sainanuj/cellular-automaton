@@ -6,6 +6,7 @@ canvas.height = window.innerHeight;
 canvas.style.backgroundColor = "#F7A998";
 
 window.onresize = () => {
+    resize();
     setup();
 }
 
@@ -29,7 +30,6 @@ let resolution = 10;
 let latestTap;
 
 function setup() {
-    resize();
     rows = Math.floor(canvas.width/resolution);
     cols = Math.floor(canvas.height/resolution);
     grid = make2Darray(rows, cols);
@@ -157,6 +157,7 @@ function doubleTap() {
         deltaTime = now - latestTap;
         if ((deltaTime < 600) && (deltaTime > 0)) {
             toggleFullscreen();
+            resize();
             setup();
         }
     }
