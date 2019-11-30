@@ -6,9 +6,12 @@ canvas.height = window.innerHeight;
 canvas.style.backgroundColor = "pink";
 
 window.onresize = () => {
+    setup();
+}
+
+function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    setup();
 }
 
 function make2Darray(rows, cols) {
@@ -26,6 +29,7 @@ let resolution = 10;
 let latestTap;
 
 function setup() {
+    resize();
     rows = Math.floor(canvas.width/resolution);
     cols = Math.floor(canvas.height/resolution);
     grid = make2Darray(rows, cols);
@@ -153,6 +157,7 @@ function doubleTap() {
         deltaTime = now - latestTap;
         if ((deltaTime < 600) && (deltaTime > 0)) {
             toggleFullscreen();
+            setup();
         }
     }
     latestTap = new Date().getTime();
