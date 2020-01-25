@@ -130,6 +130,27 @@ document.addEventListener("touchmove", (e) => {
     makeAlive(grid, x, y);
 });
 
+let left_mouse_btn_clicked = false;
+
+document.addEventListener("mousedown", (e) => {
+    left_mouse_btn_clicked = true;
+    let x = Math.floor((e.clientX)/resolution);
+    let y = Math.floor((e.clientY)/resolution);
+    makeAlive(grid, x, y);
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (left_mouse_btn_clicked) {
+        let x = Math.floor((e.clientX)/resolution);
+        let y = Math.floor((e.clientY)/resolution);
+        makeAlive(grid, x, y);
+    }
+})
+
+document.addEventListener("mouseup", (e) => {
+    left_mouse_btn_clicked = false;
+})
+
 function toggleFullscreen(elem) {
     elem = elem || document.documentElement;
     if (!document.fullscreenElement && !document.mozFullScreenElement &&
